@@ -13,7 +13,7 @@
         const pedidosFetch = async () => {
             console.log(`Realizando solicitud fetch a ${fetchURL}`)
             const pedidosFetch = await fetch(fetchURL, {
-                method: 'HEAD'
+                method: 'GET'
             })
                 .then(res => res.json())
                 .then(json => document.write(json))
