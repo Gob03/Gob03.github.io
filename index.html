@@ -15,12 +15,13 @@
                 method: 'HEAD'
             })
                 .then(res => res.json())
-                .then(json => console.log(json))
+                .then(json => document.write(json))
                 .catch(err => console.log('A ocurrido un error'))
         }
 
 
-        pedidosFetch()
+        pedidosFetch();
+    
     </script>
 </head>
 
