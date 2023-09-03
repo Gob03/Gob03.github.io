@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        const fetchURL = 'http://silbar.apipedidoplus.edtsoft.cu/menus/menu_for_web_qr/?menu_id=1'
+
+
+        const pedidosFetch = async () => {
+            console.log(`Realizando solicitud fetch a ${fetchURL}`)
+            const pedidosFetch = await fetch(fetchURL, {
+                method: 'HEAD'
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.log('A ocurrido un error'))
+        }
+
+
+        pedidosFetch()
+    </script>
 </head>
+
 <body>
     <h1>Hola Mundo</h1>
 </body>
+
 </html>
