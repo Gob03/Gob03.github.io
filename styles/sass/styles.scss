@@ -1,0 +1,96 @@
+@import 'normalize.scss';
+@import 'nav/logo.scss', 'nav/shoppingCar.scss';
+@import 'keyframes.scss';
+@import 'aside/aside.scss';
+
+.advCard{
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    align-items:end;
+    padding: 0;
+    color: #FFFFFF;
+    text-align: center;
+
+    h5{
+        text-decoration: underline;
+        font-size: 1.4rem;
+    }
+
+    a{
+        width: 90%;
+        animation: scale 1s infinite;
+    }
+}
+
+.advTag{
+    position: absolute;
+    top:  0;
+    left: 0;
+    background: rgb(255, 50, 50);
+    padding: 8px;
+    border-radius: 0 0 10px 0;
+}
+
+.imageLoader{
+    img{
+        background: url('../../GOB__VirtualShop-LOGOwhitPaddingandName.svg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+
+        &::after{
+            content: '';
+            border: 3px solid rgb(0,97,0);
+            position: absolute;
+            border-radius: 50%;
+            height: 10%;
+            width: 10%;
+            top: 45%;
+            left: 45%;
+            opacity: .5;
+            animation: waveEffect 3s infinite;
+        }
+
+        &::before{
+            content: '';
+            border: 3px solid rgb(0,97,0);
+            color: transparent;
+            position: absolute;
+            border-radius: 50%;
+            height: 10%;
+            width: 10%;
+            top: 45%;
+            left: 45%;
+            opacity: .5;
+            animation: waveEffect 3s infinite .3s;
+            opacity: 0;
+        }
+    }
+
+}
+
+.accordion-button:not(.collapsed){
+    background: rgba(0, 97, 0, .2) !important;
+}
+
+.accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: transparent !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+
+.row {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+}

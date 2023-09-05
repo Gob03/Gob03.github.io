@@ -1,0 +1,300 @@
+* {
+  box-sizing: border-box;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#car {
+  transition: scale 0.2s, transform 0.2s;
+  position: relative;
+}
+#car:hover {
+  scale: 1.2 !important;
+}
+
+#shoppingCarCont {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  background: red;
+  border-radius: 50%;
+  font-weight: 700;
+  height: 25px;
+  width: 25px;
+  line-height: 25px;
+  text-align: center;
+  display: none;
+}
+
+#shoppingCarPanel {
+  position: absolute;
+  border: 5px solid black;
+  border-top: none;
+  background: white;
+  width: 40%;
+  margin-left: 55%;
+  color: black;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.6);
+}
+#shoppingCarPanel div {
+  width: 80%;
+}
+#shoppingCarPanel article {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.175);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+#shoppingCarPanel img {
+  height: 6rem;
+  width: 6rem;
+  min-width: 6rem;
+  margin-right: 10px;
+}
+#shoppingCarPanel p {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+#shoppingCarPanel input {
+  height: 4rem;
+  width: 4rem;
+  font-size: 2rem;
+}
+
+.productName {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+
+#CarPanelOptions {
+  height: 3rem;
+  position: absolute;
+  bottom: -3.1rem;
+  display: flex;
+  z-index: -500;
+}
+#CarPanelOptions span {
+  line-height: 3rem;
+  padding: 0 8px;
+}
+#CarPanelOptions #totalCost {
+  font-size: 1.2rem;
+  border-radius: 0 0 0 1rem;
+  margin-left: -5px;
+}
+#CarPanelOptions .cost {
+  font-weight: bold;
+  padding-left: 0;
+}
+#CarPanelOptions #buyBtn {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  padding: 0 10px;
+  border-radius: 0 0 1rem 0;
+  text-align: right;
+}
+#CarPanelOptions #clearCar {
+  margin-left: auto;
+  margin-right: -5px;
+  border-radius: 0 0 1rem 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  height: 3rem;
+  transition: height 0.3s, line-height 0.3s;
+}
+#CarPanelOptions #clearCar:hover {
+  height: 4rem;
+  line-height: 4rem;
+}
+
+@keyframes scale {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.05;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes waveEffect {
+  0% {
+    height: 10%;
+    width: 10%;
+    top: 45%;
+    left: 45%;
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+  }
+  99% {
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+  }
+  100% {
+    height: 10%;
+    width: 10%;
+    top: 45%;
+    left: 45%;
+    opacity: 0;
+  }
+}
+#asideMenu {
+  padding: 0 !important;
+  margin: 0;
+}
+#asideMenu .logo {
+  font-size: 2.2rem;
+  font-weight: bolder;
+  padding-left: 20px;
+}
+#asideMenu__menu {
+  position: sticky;
+  top: 100px;
+  height: 80vh;
+  overflow-y: auto;
+}
+#asideMenu__menu > ul > li:nth-child(even) {
+  background: #EEEEEE;
+}
+#asideMenu__menu > ul > li:nth-child(odd) {
+  background: #FFFFFF;
+}
+#asideMenu__menu::-webkit-scrollbar {
+  width: 8px;
+  background: rgb(0, 97, 0);
+}
+#asideMenu__menu::-webkit-scrollbar-thumb {
+  background: green;
+}
+
+.categoryBtn {
+  font-size: 1.3rem !important;
+  font-weight: bold;
+  text-align: left !important;
+  padding-left: 1rem !important;
+  width: 100%;
+  transition: font-size 0.5s;
+}
+.categoryBtn:hover {
+  font-size: 1.35rem !important;
+}
+
+.categoryProducts {
+  margin-top: 10px;
+  font-size: 1.2rem !important;
+  padding-left: 1rem;
+}
+.categoryProducts li {
+  padding: 8px;
+  margin: 0.2rem 0;
+}
+
+.advCard {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  padding: 0;
+  color: #FFFFFF;
+  text-align: center;
+}
+.advCard h5 {
+  text-decoration: underline;
+  font-size: 1.4rem;
+}
+.advCard a {
+  width: 90%;
+  animation: scale 1s infinite;
+}
+
+.advTag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(255, 50, 50);
+  padding: 8px;
+  border-radius: 0 0 10px 0;
+}
+
+.imageLoader img {
+  background: url("../../GOB__VirtualShop-LOGOwhitPaddingandName.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.imageLoader img::after {
+  content: "";
+  border: 3px solid rgb(0, 97, 0);
+  position: absolute;
+  border-radius: 50%;
+  height: 10%;
+  width: 10%;
+  top: 45%;
+  left: 45%;
+  opacity: 0.5;
+  animation: waveEffect 3s infinite;
+}
+.imageLoader img::before {
+  content: "";
+  border: 3px solid rgb(0, 97, 0);
+  color: transparent;
+  position: absolute;
+  border-radius: 50%;
+  height: 10%;
+  width: 10%;
+  top: 45%;
+  left: 45%;
+  opacity: 0.5;
+  animation: waveEffect 3s infinite 0.3s;
+  opacity: 0;
+}
+
+.accordion-button:not(.collapsed) {
+  background: rgba(0, 97, 0, 0.2) !important;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: transparent !important;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.row {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */

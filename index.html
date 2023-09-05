@@ -4,30 +4,382 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
     <title>Document</title>
-    <script>
-        const fetchURL = 'https://silbar.apipedidoplus.edtsoft.cu/menus/menu_for_web_qr/?menu_id=1'
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="scripts/app.js" type="module"></script>
 
-
-        const pedidosFetch = async () => {
-            console.log(`Realizando solicitud fetch a ${fetchURL}`)
-            const pedidosFetch = await fetch(fetchURL, {
-                method: 'GET'
-            })
-                .then(res => res.json())
-                .then(json => document.write(json))
-                .catch(err => console.log('A ocurrido un error'))
-        }
-
-
-        pedidosFetch();
-    
-    </script>
 </head>
 
 <body>
-    <h1>Hola Mundo</h1>
+    <header class="p-3 bg-dark text-white" style="position: sticky;top: 0; width: 100%; z-index: 1000;">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a id="logo" href="./index.html" class="mb-2 mb-lg-0">
+                    <svg width="40px" height="40px" viewBox="0 0 52 52" class="me-2">
+                        <defs id="defs2">
+                            <inkscape:path-effect effect="skeletal" id="path-effect864" is_visible="true"
+                                pattern="M 0,5 C 0,2.24 2.24,0 5,0 7.76,0 10,2.24 10,5 10,7.76 7.76,10 5,10 2.24,10 0,7.76 0,5 Z"
+                                copytype="single_stretched" prop_scale="1" scale_y_rel="false" spacing="0"
+                                normal_offset="0" tang_offset="0" prop_units="false" vertical_pattern="false"
+                                fuse_tolerance="0" />
+                            <inkscape:path-effect effect="bspline" id="path-effect862" is_visible="true"
+                                weight="33.333333" steps="2" helper_size="0" apply_no_weight="true"
+                                apply_with_weight="true" only_selected="false" />
+                            <inkscape:path-effect effect="skeletal" id="path-effect858" is_visible="true"
+                                pattern="M 0,5 C 0,2.24 2.24,0 5,0 7.76,0 10,2.24 10,5 10,7.76 7.76,10 5,10 2.24,10 0,7.76 0,5 Z"
+                                copytype="single_stretched" prop_scale="1" scale_y_rel="false" spacing="0"
+                                normal_offset="0" tang_offset="0" prop_units="false" vertical_pattern="false"
+                                fuse_tolerance="0" />
+                            <inkscape:path-effect effect="spiro" id="path-effect856" is_visible="true" />
+                        </defs>
+                        <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0"
+                            inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="2.49"
+                            inkscape:cx="115.13244" inkscape:cy="87.780508" inkscape:document-units="mm"
+                            inkscape:current-layer="g1257" showgrid="false" showguides="true" inkscape:guide-bbox="true"
+                            inkscape:window-width="1920" inkscape:window-height="999" inkscape:window-x="-9"
+                            inkscape:window-y="-9" inkscape:window-maximized="1" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-245)">
+                            <g id="g1257" transform="translate(-34.470364,21.427523)">
+                                <g style="fill:none;fill-opacity:1" id="g1063-4"
+                                    transform="matrix(0.8457596,0,0,0.82515759,4.9851017,62.498533)">
+                                    <path
+                                        style="opacity:1;fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.66499996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                                        id="path1002-8" sodipodi:type="arc" sodipodi:cx="64.748383"
+                                        sodipodi:cy="257.77335" sodipodi:rx="28.414759" sodipodi:ry="28.414759"
+                                        sodipodi:start="3.1512542" sodipodi:end="4.7021852"
+                                        d="m 36.33495,257.49882 a 28.414759,28.414759 0 0 1 28.1235,-28.13875"
+                                        sodipodi:open="true" />
+                                    <path
+                                        style="opacity:1;fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.44134557;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                                        id="path1002-2-6" sodipodi:type="arc" sodipodi:cx="64.864815"
+                                        sodipodi:cy="257.68103" sodipodi:rx="18.858238" sodipodi:ry="18.858238"
+                                        sodipodi:start="3.1512542" sodipodi:end="4.7021852"
+                                        d="M 46.007457,257.49883 A 18.858238,18.858238 0 0 1 64.672393,238.82377"
+                                        sodipodi:open="true" />
+                                    <path
+                                        style="fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                                        d="m 64.45845,229.36006 0.213942,9.46371" id="path1037-9"
+                                        inkscape:connector-curvature="0" />
+                                    <path
+                                        style="fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                                        d="m 36.334951,257.49882 9.672505,10e-6" id="path1043-6"
+                                        inkscape:connector-curvature="0" />
+                                </g>
+                                <g style="fill:none;fill-opacity:1" id="g1063-4-8"
+                                    transform="matrix(0.8457596,0,0,0.8251576,5.0440141,39.245603)">
+                                    <path
+                                        style="opacity:1;fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.66499996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                                        id="path1002-8-9" sodipodi:type="arc" sodipodi:cx="64.748383"
+                                        sodipodi:cy="257.77335" sodipodi:rx="28.414759" sodipodi:ry="28.414759"
+                                        sodipodi:start="3.1512542" sodipodi:end="4.7021852"
+                                        d="m 36.33495,257.49882 a 28.414759,28.414759 0 0 1 28.1235,-28.13875"
+                                        sodipodi:open="true" />
+                                    <path
+                                        style="opacity:1;fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.44134557;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                                        id="path1002-2-6-8" sodipodi:type="arc" sodipodi:cx="64.864815"
+                                        sodipodi:cy="257.68103" sodipodi:rx="18.858238" sodipodi:ry="18.858238"
+                                        sodipodi:start="3.1512542" sodipodi:end="4.7021852"
+                                        d="M 46.007457,257.49883 A 18.858238,18.858238 0 0 1 64.672393,238.82377"
+                                        sodipodi:open="true" />
+                                    <path
+                                        style="fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                                        d="m 64.45845,229.36006 0.213942,9.46371" id="path1037-9-33"
+                                        inkscape:connector-curvature="0" />
+                                    <path
+                                        style="fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                                        d="m 36.334951,257.49882 9.672505,10e-6" id="path1043-6-6"
+                                        inkscape:connector-curvature="0" />
+                                </g>
+                                <g style="fill:none;fill-opacity:1" id="g1063-4-8-4"
+                                    transform="matrix(-0.8457596,0,0,-0.8251576,116.65197,436.69925)">
+                                    <path
+                                        style="opacity:1;fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.66499996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                                        id="path1002-8-9-8" sodipodi:type="arc" sodipodi:cx="64.748383"
+                                        sodipodi:cy="257.77335" sodipodi:rx="28.414759" sodipodi:ry="28.414759"
+                                        sodipodi:start="3.1512542" sodipodi:end="4.7021852"
+                                        d="m 36.33495,257.49882 a 28.414759,28.414759 0 0 1 28.1235,-28.13875"
+                                        sodipodi:open="true" />
+                                    <path
+                                        style="opacity:1;fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.44134557;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                                        id="path1002-2-6-8-8" sodipodi:type="arc" sodipodi:cx="64.864815"
+                                        sodipodi:cy="257.68103" sodipodi:rx="18.858238" sodipodi:ry="18.858238"
+                                        sodipodi:start="3.1512542" sodipodi:end="4.7021852"
+                                        d="M 46.007457,257.49883 A 18.858238,18.858238 0 0 1 64.672393,238.82377"
+                                        sodipodi:open="true" />
+                                    <path
+                                        style="fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                                        d="m 64.45845,229.36006 0.213942,9.46371" id="path1037-9-33-1"
+                                        inkscape:connector-curvature="0" />
+                                    <path
+                                        style="fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                                        d="m 36.334951,257.49882 9.672505,10e-6" id="path1043-6-6-2"
+                                        inkscape:connector-curvature="0" />
+                                </g>
+                                <g style="fill:none;fill-opacity:1" id="g1063-4-8-4-1"
+                                    transform="matrix(-0.8457596,0,0,-0.8251576,116.82583,460.41799)">
+                                    <path
+                                        style="opacity:1;fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.66499996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                                        id="path1002-8-9-8-9" sodipodi:type="arc" sodipodi:cx="64.748383"
+                                        sodipodi:cy="257.77335" sodipodi:rx="28.414759" sodipodi:ry="28.414759"
+                                        sodipodi:start="3.1512542" sodipodi:end="4.7021852"
+                                        d="m 36.33495,257.49882 a 28.414759,28.414759 0 0 1 28.1235,-28.13875"
+                                        sodipodi:open="true" />
+                                    <path
+                                        style="opacity:1;fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.44134557;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                                        id="path1002-2-6-8-8-4" sodipodi:type="arc" sodipodi:cx="64.864815"
+                                        sodipodi:cy="257.68103" sodipodi:rx="18.858238" sodipodi:ry="18.858238"
+                                        sodipodi:start="3.1512542" sodipodi:end="4.7021852"
+                                        d="M 46.007457,257.49883 A 18.858238,18.858238 0 0 1 64.672393,238.82377"
+                                        sodipodi:open="true" />
+                                    <path
+                                        style="fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                                        d="m 64.45845,229.36006 0.213942,9.46371" id="path1037-9-33-1-2"
+                                        inkscape:connector-curvature="0" />
+                                    <path
+                                        style="fill:none;fill-opacity:1;stroke:#006100;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                                        d="m 36.334951,257.49882 9.672505,10e-6" id="path1043-6-6-2-1"
+                                        inkscape:connector-curvature="0" />
+                                </g>
+                                <path
+                                    style="opacity:1;fill:#006100;fill-opacity:1;stroke:#006100;stroke-width:1.0093919;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+                                    d="M 6.3395993,101.70673 C 8.4909631,71.415544 26.148306,44.658513 53.526016,30.202855 64.416285,24.452703 80.550446,20.089733 90.951209,20.082403 l 3.087839,-0.0022 0.206847,1.706828 c 0.113767,0.938755 0.308117,7.05609 0.431888,13.594078 l 0.225036,11.887251 -3.644414,0.258688 C 83.362903,48.08751 76.219542,50.060775 68.586257,53.78997 62.231181,56.894704 57.466775,60.315086 52.321197,65.4667 42.367306,75.432275 36.245704,88.552712 35.19948,102.16371 l -0.265856,3.45869 H 20.497561 6.0614982 Z"
+                                    id="path1944" inkscape:connector-curvature="0"
+                                    transform="matrix(0.26458333,0,0,0.26458333,34.470364,223.57248)" />
+                                <path
+                                    style="opacity:1;fill:#006100;fill-opacity:1;stroke:#006100;stroke-width:1.0093919;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+                                    d="m 105.1166,88.560082 c -0.0654,-0.224161 -0.23048,-6.389442 -0.36678,-13.700627 l -0.24783,-13.29306 3.52808,-0.230791 c 4.21764,-0.2759 10.82031,-1.573586 14.97386,-2.94296 4.53415,-1.494851 12.20223,-5.385466 16.26427,-8.252132 4.47383,-3.157278 10.88514,-9.522694 13.9814,-13.881325 6.20667,-8.737179 10.09835,-19.29353 10.96137,-29.7331774 l 0.2739,-3.313253 h 14.42769 14.42769 l -0.24988,3.313253 C 191.76182,24.14178 185.99986,39.697803 175.74724,53.348696 162.11809,71.495279 141.09641,84.11017 118.38545,87.770897 c -5.34289,0.861209 -13.11295,1.323346 -13.26885,0.789185 z"
+                                    id="path1946" inkscape:connector-curvature="0"
+                                    transform="matrix(0.26458333,0,0,0.26458333,34.470364,223.57248)" />
+                                <path
+                                    style="opacity:1;fill:#006100;fill-opacity:1;stroke:#006100;stroke-width:1.0093919;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+                                    d="m 105.5984,170.23201 c -0.14583,-4.68282 -0.26516,-10.89738 -0.26516,-13.81012 v -5.29591 l 4.11647,-0.26545 c 15.31326,-0.98748 31.32685,-9.13832 41.36021,-21.05213 8.38722,-9.95915 12.83836,-20.74782 14.1623,-34.326567 l 0.26431,-2.710844 h 14.22506 14.22507 v 2.589873 c 0,6.015548 -1.91904,16.170988 -4.47385,23.675328 -1.57822,4.63578 -5.61185,13.10651 -8.30181,17.43402 -3.15413,5.07427 -7.88685,11.05068 -12.12675,15.31349 -15.93887,16.025 -36.13101,25.09805 -59.47099,26.72243 l -3.4497,0.24009 z"
+                                    id="path1948" inkscape:connector-curvature="0"
+                                    transform="matrix(0.26458333,0,0,0.26458333,34.470364,223.57248)" />
+                                <path
+                                    style="opacity:1;fill:#006100;fill-opacity:1;stroke:#006100;stroke-width:1.0093919;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:6.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+                                    d="m 6.1442981,190.86336 c 0.00431,-1.49096 0.263742,-4.63308 0.5765106,-6.98247 3.2972333,-24.76753 17.3635753,-46.95126 38.7730783,-61.14822 13.516057,-8.96269 27.514735,-13.52974 45.618964,-14.88311 l 2.84788,-0.21289 0.26457,8.49537 c 0.145514,4.67245 0.26457,10.87868 0.26457,13.79163 v 5.29627 l -3.915662,0.25609 c -7.451538,0.48734 -14.611494,2.46618 -21.987952,6.07692 -10.274964,5.02956 -17.708623,11.53934 -24.119682,21.12202 -5.469298,8.17502 -8.542857,17.18516 -9.615682,28.18839 l -0.26431,2.71084 H 20.36152 6.1364577 Z"
+                                    id="path1950" inkscape:connector-curvature="0"
+                                    transform="matrix(0.26458333,0,0,0.26458333,34.470364,223.57248)" />
+                            </g>
+                        </g>
+                    </svg>
+                    VIRTUAL SHOP
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                    <input type="search" class="form-control form-control-dark" placeholder="Search..."
+                        aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <div class="mx-3" id="car"
+                        style="display: inline-block; position: relative; height: 40px; width: 40px;">
+                        <svg xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+                            xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="40px" height="40px"
+                            viewBox="0 0 56 55" version="1.1" inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+                            sodipodi:docname="GOB__car.svg">
+                            <defs id="defs2">
+                                <linearGradient id="linearGradient846" osb:paint="solid">
+                                    <stop style="stop-color:#000000;stop-opacity:1;" offset="0" id="stop844" />
+                                </linearGradient>
+                            </defs>
+                            <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0"
+                                inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="2.02"
+                                inkscape:cx="316.6163" inkscape:cy="144.39083" inkscape:document-units="mm"
+                                inkscape:current-layer="layer1" showgrid="false" showguides="true"
+                                inkscape:guide-bbox="true" inkscape:window-width="1920" inkscape:window-height="999"
+                                inkscape:window-x="-9" inkscape:window-y="-9" inkscape:window-maximized="1" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1"
+                                transform="translate(0,-242)">
+                                <path
+                                    style="fill:none;stroke:#EEEEEE;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                    d="M 0.89842444,243.34172 C 9.6004164,277.22174 9.6004164,277.22174 9.6004164,277.22174 H 50.073806 l 5.40715,-24.56371 H 3.3206664 l 8.3293386,32.02968 h 36.968242"
+                                    id="path817" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccc" />
+                                <circle
+                                    style="fill:none;fill-opacity:1;stroke:#EEEEEE;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                    id="path823" cx="41.462212" cy="291.57996" r="4.8444834" />
+                                <circle
+                                    style="fill:none;fill-opacity:1;stroke:#EEEEEE;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                    id="path823-1" cx="17.260086" cy="291.5043" r="4.8444834" />
+                            </g>
+                        </svg>
+                        <span id="shoppingCarCont"></span>
+                    </div>
+
+                    <button type="button" class="btn btn-outline-light me-2">Login</button>
+                    <button type="button" class="btn btn-warning">Sign-up</button>
+                </div>
+            </div>
+        </div>
+        <div id="shoppingCarPanel" class="my-3" style="display: none;">
+            <div id="CarPanelOptions" style="width: 100%;">
+                <span id="totalCost" class="bg-dark text-white ">Coste: <span class="cost">690$</span></span>
+                <span id="buyBtn" class="btn btn-primary ">Comprar</span>
+                <span id="clearCar" class=" btn btn-danger">Vaciar Carrito</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container p-0" style=" max-width: 100vw ;min-height: 100vh;">
+        <div class="row" style="min-height: 90vh;">
+            <!--Aside-->
+            <aside class="flex-shrink-0 p-3 bg-white w-25" id="asideMenu">
+                <div id="asideMenu__menu">
+                    <a href="../../../../index.html"
+                        class=" logo d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                        Menu
+                    </a>
+                    <ul id="menu" class="list-unstyled ps-0">
+                        <!--<li class="mb-1">
+                            <button class="categoryBtn btn btn-toggle align-items-center rounded collapsed"
+                                data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                                Bebidas (4)
+                            </button>
+                            <div class="categoryProducts collapse" id="home-collapse" style="">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded">Overview</a></li>
+                                    <li><a href="#" class="link-dark rounded">Updates</a></li>
+                                    <li><a href="#" class="link-dark rounded">Reports</a></li>
+                                </ul>
+                            </div>
+                        </li>-->
+                    </ul>
+                </div>
+            </aside>
+
+            <!--CardsContainer-->
+            <div class="p-0 w-75">
+                <div class="accordion" id="cardsContainer">
+
+                </div>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Loading...
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show container"
+                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body row">
+                                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card m-1 imageLoader">
+                                        <img src="" class="card-img-top my-1" alt="..." style="height: 250px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Loading...</h5>
+                                            <a class="btn btn-primary">Add to car</a>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card m-1 imageLoader">
+                                        <img src="" class="card-img-top my-1" alt="..." style="height: 250px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Loading...</h5>
+                                            <a class="btn btn-primary">Add to car</a>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card m-1 imageLoader">
+                                        <img src="" class="card-img-top my-1" alt="..." style="height: 250px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Loading...</h5>
+                                            <a class="btn btn-primary">Add to car</a>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card m-1 imageLoader">
+                                        <img src="" class="card-img-top my-1" alt="..." style="height: 250px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Loading...</h5>
+                                            <a class="btn btn-primary">Add to car</a>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card m-1 imageLoader">
+                                        <img src="" class="card-img-top my-1" alt="..." style="height: 250px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Loading...</h5>
+                                            <a class="btn btn-primary">Add to car</a>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card m-1 imageLoader">
+                                        <img src="" class="card-img-top my-1" alt="..." style="height: 250px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Loading...</h5>
+                                            <a class="btn btn-primary">Add to car</a>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card m-1 imageLoader">
+                                        <img src="" class="card-img-top my-1" alt="..." style="height: 250px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Loading...</h5>
+                                            <a class="btn btn-primary">Add to car</a>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card m-1 imageLoader">
+                                        <img src="" class="card-img-top my-1" alt="..." style="height: 250px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Loading...</h5>
+                                            <a class="btn btn-primary">Add to car</a>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

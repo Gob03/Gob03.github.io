@@ -1,0 +1,120 @@
+#car {
+    transition: scale .2s, transform .2s;
+    position: relative;
+
+    &:hover {
+        scale: 1.2 !important;
+    }
+}
+
+#shoppingCarCont {
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    background: red;
+    border-radius: 50%;
+    font-weight: 700;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    display: none;
+}
+
+#shoppingCarPanel {
+    position: absolute;
+    border: 5px solid black;
+    border-top: none;
+    background: white;
+    width: 40%;
+    margin-left: 55%;
+    color: black;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, .6);
+
+    div {
+        width: 80%;
+    }
+
+    article {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.175);
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        background: white;
+    }
+
+
+    img {
+        height: 6rem;
+        width: 6rem;
+        min-width: 6rem;
+        margin-right: 10px;
+    }
+
+    p {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
+
+    input {
+        height: 4rem;
+        width: 4rem;
+        font-size: 2rem;
+    }
+}
+
+
+.productName {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-right: 10px;
+    text-decoration: underline;
+}
+
+#CarPanelOptions {
+    height: 3rem;
+    position: absolute;
+    bottom: -3.1rem;
+    display: flex;
+    z-index: -500;
+
+    span {
+        line-height: 3rem;
+        padding: 0 8px;
+    }
+
+    #totalCost {
+        font-size: 1.2rem;
+        border-radius: 0 0 0 1rem;
+        margin-left: -5px;
+    }
+
+    .cost {
+        font-weight: bold;
+        padding-left: 0;
+    }
+
+    #buyBtn {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #FFFFFF;
+        padding: 0 10px;
+        border-radius: 0 0 1rem 0;
+        text-align: right;
+    }
+
+    #clearCar {
+        margin-left: auto;
+        margin-right: -5px;
+        border-radius: 0 0 1rem 1rem;
+        font-weight: bold;
+        font-size: 1.1rem;
+        height: 3rem;
+        transition: height .3s, line-height .3s;
+    }
+
+    #clearCar:hover {
+        height: 4rem;
+        line-height: 4rem;
+    }
+}
